@@ -2,6 +2,10 @@ name: Java Quality
 
 on:
   workflow_call:
+    inputs:
+      java-version:
+        required: true
+        type: string
 
 jobs:
 
@@ -16,6 +20,8 @@ jobs:
 
       - name: Setup Java
         uses: Dhana008/java-platform/actions/setup-java@develop
+        with:
+          java-version: ${{ inputs.java-version }}
 
       - name: Compile
         uses: Dhana008/java-platform/actions/compile@develop
