@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: AI PR Summary
-        uses: Dhana008/java-platform/actions/ai-pr-summary@develop
+        uses: Dhana008/java-platform/actions/ai-pr-review@develop
