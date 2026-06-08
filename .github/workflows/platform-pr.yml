@@ -1,0 +1,12 @@
+name: Platform PR
+
+on:
+  workflow_call:
+
+jobs:
+
+  quality:
+    uses: Dhana008/java-platform/.github/workflows/java-quality.yml@develop
+
+  security:
+    uses: Dhana008/java-platform/.github/workflows/codeql.yml@develop
