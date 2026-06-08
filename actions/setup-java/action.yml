@@ -1,6 +1,10 @@
 name: Setup Java
 
-description: Setup Java 17 and Maven cache
+description: Setup Java and Maven cache
+
+inputs:
+  java-version:
+    required: true
 
 runs:
   using: composite
@@ -11,13 +15,5 @@ runs:
       uses: actions/setup-java@v4
       with:
         distribution: temurin
-        java-version: 17
+        java-version: ${{ inputs.java-version }}
         cache: maven
-
-    - name: Verify Java
-      shell: bash
-      run: java -version
-
-    - name: Verify Maven
-      shell: bash
-      run: mvn -version
