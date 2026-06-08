@@ -31,6 +31,9 @@ jobs:
 
       - name: JaCoCo
         uses: Dhana008/java-platform/actions/jacoco@develop
+        with:
+          name: jacoco-report
+          path: target/site/jacoco
   
       - name: Spotless
         uses: Dhana008/java-platform/actions/spotless@develop
