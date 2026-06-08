@@ -19,4 +19,7 @@ jobs:
       java-version: ${{ inputs.java-version }}
 
   ai-review:
+    needs:
+      - quality
+      - security
     uses: Dhana008/java-platform/.github/workflows/ai-review.yml@develop
