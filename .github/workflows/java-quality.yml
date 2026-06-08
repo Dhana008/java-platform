@@ -29,6 +29,9 @@ jobs:
       - name: Unit Test
         uses: Dhana008/java-platform/actions/unit-test@develop
 
+      - name: JaCoCo
+        uses: Dhana008/java-platform/actions/jacoco@develop
+  
       - name: Spotless
         uses: Dhana008/java-platform/actions/spotless@develop
 
