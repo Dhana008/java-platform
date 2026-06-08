@@ -1,0 +1,30 @@
+name: Java Quality
+
+on:
+  workflow_call:
+
+jobs:
+
+  quality:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: Dhana008/java-platform/actions/setup-java@develop
+
+      - name: Compile
+        uses: Dhana008/java-platform/actions/compile@develop
+
+      - name: Unit Test
+        uses: Dhana008/java-platform/actions/unit-test@develop
+
+      - name: Spotless
+        uses: Dhana008/java-platform/actions/spotless@develop
+
+      - name: SpotBugs
+        uses: Dhana008/java-platform/actions/spotbugs@develop
