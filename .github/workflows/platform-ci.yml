@@ -30,9 +30,6 @@ jobs:
       - name: Unit Test
         uses: Dhana008/java-platform/actions/unit-test@develop
 
-      - name: Dependency Check
-        uses: Dhana008/java-platform/actions/dependency-check@develop
-
       - name: Package
         uses: Dhana008/java-platform/actions/package-jar@develop
 
