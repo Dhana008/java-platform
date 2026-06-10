@@ -1,0 +1,23 @@
+name: Image Metadata
+
+description: Generate standardized image metadata
+
+outputs:
+  image-uri:
+    description: Full image URI
+    value: ${{ steps.metadata.outputs.image-uri }}
+
+runs:
+  using: composite
+
+  steps:
+
+    - id: metadata
+      shell: bash
+      run: |
+
+        REPO=$(echo "${GITHUB_REPOSITORY}" | tr '[:upper:]' '[:lower:]')
+
+        IMAGE_URI="${REGISTRY}/${REPO}:${GITHUB_SHA}"
+
+        echo "image-uri=${IMAGE_URI}" >> $GITHUB_OUTPUT
