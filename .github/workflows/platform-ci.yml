@@ -41,3 +41,6 @@ jobs:
 
       - name: Trivy Scan
         uses: Dhana008/java-platform/actions/trivy-scan@develop
+
+      - name: Push GHCR
+        uses: Dhana008/java-platform/actions/push-ghcr@develop
