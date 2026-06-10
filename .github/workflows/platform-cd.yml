@@ -29,10 +29,10 @@ jobs:
           token: ${{ secrets.gitops-token }}
           path: gitops
 
-      - name: Verify Inputs
-        shell: bash
-        run: |
-          echo "Image URI = ${{ inputs.image-uri }}"
+      #- name: Verify Inputs
+      #  shell: bash
+      #  run: |
+        #  echo "Image URI = ${{ inputs.image-uri }}"
           
       - name: Update Manifest
         shell: bash
