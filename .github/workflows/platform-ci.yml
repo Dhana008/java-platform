@@ -41,8 +41,14 @@ jobs:
       - name: Build Container
         uses: Dhana008/java-platform/actions/build-container@develop
 
+      - name: Image Metadata
+        id: image
+        uses: Dhana008/java-platform/actions/image-metadata@develop
+
       - name: Trivy Scan
         uses: Dhana008/java-platform/actions/trivy-scan@develop
 
-      - name: Push GHCR
-        uses: Dhana008/java-platform/actions/push-ghcr@develop
+      - name: Push Image
+        uses: Dhana008/java-platform/actions/push-image@develop
+        with:
+          image-uri: ${{ steps.image.outputs.image-uri }}
