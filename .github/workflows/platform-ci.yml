@@ -19,6 +19,8 @@ jobs:
   ci:
 
     runs-on: ubuntu-latest
+    outputs:
+      image-uri: ${{ steps.image.outputs.image-uri }}
 
     steps:
 
