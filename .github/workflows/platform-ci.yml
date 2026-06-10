@@ -59,3 +59,15 @@ jobs:
         with:
           image-uri: ${{ steps.image.outputs.image-uri }}
 
+  deploy-dev:
+
+    needs: ci
+  
+    uses: Dhana008/java-platform/.github/workflows/platform-cd.yml@develop
+  
+    with:
+      image-uri: ${{ needs.ci.outputs.image-uri }}
+  
+    secrets:
+      gitops-token: ${{ secrets.GITOPS_TOKEN }}
+
