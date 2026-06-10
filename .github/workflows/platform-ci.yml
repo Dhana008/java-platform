@@ -52,3 +52,8 @@ jobs:
       - name: Trivy Scan
         uses: Dhana008/java-platform/actions/trivy-scan@develop
 
+      - name: Push Image
+        uses: Dhana008/java-platform/actions/push-image@develop
+        with:
+          image-uri: ${{ steps.image.outputs.image-uri }}
+
