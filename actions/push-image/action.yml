@@ -11,12 +11,12 @@ runs:
 
   steps:
 
-    - name: Login Registry
-      shell: bash
-      run: |
-        echo "${{ github.token }}" | docker login ghcr.io \
-          -u ${{ github.actor }} \
-          --password-stdin
+    #- name: Login Registry
+     # shell: bash
+      #run: |
+       # echo "${{ github.token }}" | docker login ghcr.io \
+        #  -u ${{ github.actor }} \
+         # --password-stdin
 
     - name: Tag Image
       shell: bash
