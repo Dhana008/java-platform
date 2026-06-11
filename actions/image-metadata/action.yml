@@ -2,6 +2,10 @@ name: Image Metadata
 
 description: Generate standardized image metadata
 
+inputs:
+  image-prefix:
+    required: true
+    
 outputs:
   image-uri:
     description: Full image URI
@@ -18,6 +22,6 @@ runs:
 
         REPO=$(echo "${GITHUB_REPOSITORY}" | tr '[:upper:]' '[:lower:]')
 
-        IMAGE_URI="${REGISTRY}/${REPO}:${GITHUB_SHA}"
+        IMAGE_URI="${{ inputs.image-prefix }}:${GITHUB_SHA}"
 
         echo "image-uri=${IMAGE_URI}" >> $GITHUB_OUTPUT
