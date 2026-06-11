@@ -42,9 +42,9 @@ jobs:
 
       - name: Verify GCP Access
         run: |
-          gcloud auth list
-          gcloud artifacts repositories list \
+          gcloud artifacts repositories describe platform-images \
             --location=asia-southeast1
+  
       - name: Setup Java
         uses: Dhana008/java-platform/actions/setup-java@develop
         with:
