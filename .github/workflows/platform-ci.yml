@@ -37,6 +37,14 @@ jobs:
           workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
 
+      - name: Setup GCloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Verify GCP Access
+        run: |
+          gcloud auth list
+          gcloud artifacts repositories list \
+            --location=asia-southeast1
       - name: Setup Java
         uses: Dhana008/java-platform/actions/setup-java@develop
         with:
