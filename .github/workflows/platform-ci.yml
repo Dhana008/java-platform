@@ -77,6 +77,8 @@ jobs:
       - name: Image Metadata
         id: image
         uses: Dhana008/java-platform/actions/image-metadata@develop
+        with:
+          image-prefix: ghcr.io/dhana008/java-app-demo
 
       - name: Trivy Scan
         uses: Dhana008/java-platform/actions/trivy-scan@develop
