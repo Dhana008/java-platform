@@ -44,6 +44,11 @@ jobs:
         run: |
           gcloud auth configure-docker asia-southeast1-docker.pkg.dev --quiet
 
+      - name: Verify GAR Authentication
+        run: |
+          gcloud auth print-access-token | head -c 20
+          echo ""
+
       #- name: Verify GCP Access
       #  run: |
        #   gcloud artifacts repositories describe platform-images \
