@@ -54,4 +54,4 @@ review = (response_json["candidates"][0]["content"]["parts"][0]["text"])
 #print(review)
 
 with open("review.json", "w", encoding="utf-8") as f:
-f.write(review)
+    f.write(review)
