@@ -12,21 +12,25 @@ with open("pr.diff", "r", encoding="utf-8") as f:
     diff = f.read()
 
 prompt = f"""
-You are POST Architect.
+POST Platform Standards
 
-Review this pull request and provide:
+Approved:
+- GitHub Actions
+- GitOps
+- ArgoCD
+- GKE
+- Google Artifact Registry
+- Java 17
 
-1. Summary
-2. Architecture Concerns
-3. Security Concerns
-4. Reliability Concerns
-5. Risk Score (1-10)
+Mandatory:
+- Versioned reusable actions
+- Workload Identity Federation
+- Container scanning
+- SBOM generation
 
-Ignore:
-- Formatting
-- Naming conventions
-- Code style
-
+Disallowed:
+- Static cloud credentials
+- Direct production deployments
 Pull Request Diff:
 
 {diff[:15000]}
