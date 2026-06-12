@@ -63,5 +63,6 @@ print("\n")
 print("=" * 80)
 print("POST ARCHITECT REVIEW")
 print("=" * 80)
-print(review)
+with open("review.md", "w", encoding="utf-8") as f:
+    f.write(review)
 
