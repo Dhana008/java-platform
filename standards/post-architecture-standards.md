@@ -79,3 +79,24 @@ Ignore:
 Lab Context:
 
 This repository is currently operating in a lab/prototype environment. Experimental patterns are acceptable if clearly identified and documented.
+Review the PR.
+
+Identify findings.
+
+For each finding provide:
+
+- severity
+- category
+- issue
+- recommendation
+
+After identifying findings:
+
+Calculate overall risk score.
+
+The risk score must be justified by the findings.
+
+If no findings exist:
+
+Risk score must be 0 or 1.
+State explicitly why.
