@@ -29,12 +29,6 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
-      
-      - name: Test Gemini
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          python scripts/test_gemini.py
 
       - name: Get PR Diff
         run: |
@@ -48,8 +42,14 @@ jobs:
           echo "===== FIRST 50 LINES ====="
           head -50 pr.diff
 
-      - name: Upload Diff
-        uses: actions/upload-artifact@v4
-        with:
-          name: pr-diff
-          path: pr.diff
+     #- name: Upload Diff
+        #uses: actions/upload-artifact@v4
+        #with:
+         # name: pr-diff
+          #path: pr.diff
+          
+      - name: Test Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/test_gemini.py
