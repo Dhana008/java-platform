@@ -17,7 +17,22 @@ with open(
     encoding="utf-8"
 ) as f:
     standards = f.read()
-    
+
+json_schema = """
+{
+  "risk_score": number,
+  "overall_assessment": string,
+  "findings": [
+    {
+      "severity": string,
+      "category": string,
+      "finding": string,
+      "recommendation": string
+    }
+  ]
+}
+"""
+
 prompt = f"""
 You are POST Architect.
 
@@ -31,18 +46,7 @@ Return ONLY valid JSON.
 
 Schema:
 
-{
-  "risk_score": number,
-  "overall_assessment": string,
-  "findings": [
-    {
-      "severity": string,
-      "category": string,
-      "finding": string,
-      "recommendation": string
-    }
-  ]
-}
+{json_schema}
 
 PR Diff:
 
