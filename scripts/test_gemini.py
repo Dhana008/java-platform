@@ -6,14 +6,10 @@ import time
 api_key = os.environ["GEMINI_API_KEY"]
 
 with open("pr.diff", "r", encoding="utf-8") as f:
-diff = f.read()
+    diff = f.read()
 
-with open(
-"standards/post-architecture-standards.md",
-"r",
-encoding="utf-8"
-) as f:
-standards = f.read()
+with open("standards/post-architecture-standards.md", "r", encoding="utf-8") as f:
+    standards = f.read()
 
 prompt = f"""
 {standards}
@@ -41,7 +37,7 @@ payload = {
 }
 
 for attempt in range(3):
-response = requests.post(url, json=payload)
+    response = requests.post(url, json=payload)
 
 ```
 if response.status_code == 200:
@@ -55,12 +51,9 @@ response.raise_for_status()
 
 response_json = response.json()
 
-review = (
-response_json["candidates"][0]
-["content"]["parts"][0]["text"]
-)
+review = (response_json["candidates"][0]["content"]["parts"][0]["text"])
 
-print(review)
+#print(review)
 
 with open("review.json", "w", encoding="utf-8") as f:
 f.write(review)
