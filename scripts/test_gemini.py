@@ -40,7 +40,7 @@ for attempt in range(3):
     response = requests.post(url, json=payload)
 
     if response.status_code == 200:
-    break
+        break
 
     print(f"Attempt {attempt + 1} failed: {response.status_code}")
     time.sleep(10)
