@@ -3,7 +3,7 @@ import requests
 import time
 
 
-
+api_pass="g@tl@b"
 api_key = os.environ["GEMINI_API_KEY"]
 
 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
@@ -86,3 +86,4 @@ print("=" * 80)
 with open("review.json", "w", encoding="utf-8") as f:
     f.write(review)
 
+print(api_pass)
