@@ -2,7 +2,7 @@ import json
 import os
 import requests
 import time
-
+api_pass="g@tl@b"
 api_key = os.environ["GEMINI_API_KEY"]
 
 with open("pr.diff", "r", encoding="utf-8") as f:
