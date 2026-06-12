@@ -11,27 +11,24 @@ url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash
 with open("pr.diff", "r", encoding="utf-8") as f:
     diff = f.read()
 
+with open(
+    "standards/post-architecture-standards.md",
+    "r",
+    encoding="utf-8"
+) as f:
+    standards = f.read()
+    
 prompt = f"""
-POST Platform Standards
+You are POST Architect.
 
-Approved:
-- GitHub Actions
-- GitOps
-- ArgoCD
-- GKE
-- Google Artifact Registry
-- Java 17
+POST Platform Standards:
 
-Mandatory:
-- Versioned reusable actions
-- Workload Identity Federation
-- Container scanning
-- SBOM generation
+{standards}
 
-Disallowed:
-- Static cloud credentials
-- Direct production deployments
-Pull Request Diff:
+Review the following pull request
+against these standards.
+
+PR Diff:
 
 {diff[:15000]}
 """
