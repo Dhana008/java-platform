@@ -27,6 +27,22 @@ POST Platform Standards:
 
 Review the following pull request
 against these standards.
+Return ONLY valid JSON.
+
+Schema:
+
+{
+  "risk_score": number,
+  "overall_assessment": string,
+  "findings": [
+    {
+      "severity": string,
+      "category": string,
+      "finding": string,
+      "recommendation": string
+    }
+  ]
+}
 
 PR Diff:
 
@@ -63,6 +79,6 @@ print("\n")
 print("=" * 80)
 print("POST ARCHITECT REVIEW")
 print("=" * 80)
-with open("review.md", "w", encoding="utf-8") as f:
+with open("review.json", "w", encoding="utf-8") as f:
     f.write(review)
 
