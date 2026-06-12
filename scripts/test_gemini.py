@@ -54,4 +54,13 @@ for attempt in range(3):
     time.sleep(10)
 
 print("Status Code:", response.status_code)
-print(response.text)
+response_json = response.json()
+
+review = response_json["candidates"][0]["content"]["parts"][0]["text"]
+
+print("\n")
+print("=" * 80)
+print("POST ARCHITECT REVIEW")
+print("=" * 80)
+print(review)
+
