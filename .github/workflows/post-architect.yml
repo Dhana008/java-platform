@@ -26,6 +26,13 @@ jobs:
           git fetch origin ${{ github.base_ref }}
           git diff origin/${{ github.base_ref }}...HEAD > pr.diff
 
+      - name: Show Diff Stats
+        run: |
+          echo "===== DIFF STATS ====="
+          wc -l pr.diff
+          echo "===== FIRST 50 LINES ====="
+          head -50 pr.diff
+
       - name: Upload Diff
         uses: actions/upload-artifact@v4
         with:
