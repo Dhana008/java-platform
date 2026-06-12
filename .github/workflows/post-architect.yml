@@ -53,6 +53,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python scripts/test_gemini.py
+          python scripts/post-guardian-standards.py
 
       - name: Post Review Comment
         uses: actions/github-script@v7
