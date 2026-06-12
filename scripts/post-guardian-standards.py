@@ -8,7 +8,7 @@ api_key = os.environ["GEMINI_API_KEY"]
 with open("pr.diff", "r", encoding="utf-8") as f:
     diff = f.read()
 
-with open("standards/post-architecture-standards.md", "r", encoding="utf-8") as f:
+with open("standards/post-guardian-standards.md", "r", encoding="utf-8") as f:
     standards = f.read()
 
 prompt = f"""
