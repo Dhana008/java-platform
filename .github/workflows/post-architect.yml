@@ -61,7 +61,7 @@ jobs:
             const fs = require('fs');
       
             const review =
-              fs.readFileSync('review.md', 'utf8');
+              fs.readFileSync('review.json', 'utf8');
       
             await github.rest.issues.createComment({
               owner: context.repo.owner,
